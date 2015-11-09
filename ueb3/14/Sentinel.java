@@ -1,5 +1,7 @@
+import java.util.Scanner;
+
 /**
- *	Mo 26. Okt 16:53:48 CET 2015
+ *	26.10.2015 16:58:29
  *
  *	PR1, WS2015/16
  *
@@ -11,27 +13,25 @@
  * 	Matrikelnummer 1302082
  * 	julian.opitz@stud.hs-hannover.de
  *
- *	-----------------------------------------
- *	Programmbeschreibung
  */
-import java.util.Scanner;
-
 public class Sentinel {
+
 	public static void main(String[] args) {
-		Scanner console = new Scanner(System.in);
+		final String query = "Geben Sie einen Namen ein (oder eine leere Zeile zum Beenden): ";
+		final String welcome = "Willkommen an alle:";
 		String names = new String();
-
-		while (true) {
-
-			System.out.print("input : ");
-			String gelesen = console.nextLine();
-
-			if( gelesen.isEmpty()) break;
-			names = names.concat(" " + gelesen);
-
-
+		Scanner c = new Scanner(System.in);
+		boolean running = true;
+		while (running) {
+			System.out.print(query);
+			String in = c.nextLine();
+			if (!in.isEmpty()) {
+				names = names.concat(" " + in);
+			} else {
+				running = false;
+			}
 		}
-		System.out.println("Die Namen:" + names);
-
+		c.close();
+		System.out.println(welcome + names);
 	}
 }

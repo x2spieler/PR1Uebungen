@@ -1,5 +1,5 @@
 /**
- *	Mo 26. Okt 16:33:19 CET 2015
+ *	26.10.2015 17:02:54
  *
  *	PR1, WS2015/16
  *
@@ -11,40 +11,50 @@
  * 	Matrikelnummer 1302082
  * 	julian.opitz@stud.hs-hannover.de
  *
- *	-----------------------------------------
- *	Programmbeschreibung
  */
 public class Quadratic {
+
 	public static void main(String[] args) {
-
-		quadratic( 1.0, -12.0, 35);
-		quadratic( 0.2, -0.8, 0.8);
-		quadratic( 1.0, 12.0, 37);
-		quadratic( 0.1, 0.6, 0.9);
-		quadratic( 0.0, 4.0, 7.0);
-		quadratic( 1.0, -4.2, 4.21);
-
+		quadratic(1, -12, 35);
+		quadratic(0.2, -0.8, 0.8);
+		quadratic(1, 12, 37);
+		quadratic(0.1, 0.6, 0.9);
+		quadratic(0, 4.0, 7.0);
+		quadratic(1.0, -4.2, 4.21);
 	}
+
 	public static void quadratic(double a, double b, double c) {
-		System.out.println("---------");
-		if( a == 0.0) {
+		if (a != 0) {
+			double[] results = new double[2];
+			double temp = Math.sqrt(round(b * b - 4 * a * c));
+			if (!Double.isNaN(temp)) {
+				results[0] = (temp - b) / (2 * a);
+				results[1] = (-b - temp) / (2 * a);
+				if (results[0] == results[1]) {
+					System.out.println("Lösung: "
+							+ String.format("%.1f", results[0]));
+				} else {
+					System.out.println("Erste  Lösung = "
+							+ String.format("%.1f", results[0]));
+					System.out.println("Zweite Lösung = "
+							+ String.format("%.1f", results[1]));
+				}
+			} else {
+				System.out.println("Keine reelle Lösung");
+			}
+		} else {
 			System.out.println("a muss ungleich 0 sein");
-			return;
-		}
-
-		double wurzelInhalt = b*b - 4*a*c;
-		wurzelInhalt = Math.round(wurzelInhalt * 1000000000) / 1000000000.0;
-		if  (wurzelInhalt < 0.0) {
-			System.out.println("Keine reelle Lösung");
-			return;
-		}
-
-		double x1 = (-1.0*b + Math.sqrt(wurzelInhalt))/(2*a);
-		double x2 = (-1.0*b - Math.sqrt(wurzelInhalt))/(2*a);
-
-		System.out.println("1.: = " + Math.round(x1 * 10) / 10.0); 
-		if (x1 != x2) {	
-			System.out.println("2.: = " + Math.round(x2 * 10) / 10.0);
 		}
 	}
+
+	public static double round(double value) {
+		if (Double.isNaN(value)) {
+			return value;
+		}
+		if (Double.isInfinite(value)) {
+			return value;
+		}
+		return Math.round(value * 100000) / 100000.0;
+	}
+
 }
