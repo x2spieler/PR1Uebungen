@@ -1,1 +1,8 @@
+*.swp
+*.class
 /.project
+/bin/
+/.classpath
+.gitignore
+/.settings/
+/src/
