@@ -1,5 +1,5 @@
 /**
- *	Mo 30. Nov 15:39:32 CET 2015
+ *	Mo 30. Nov 16:39:21 CET 2015
  *
  *	PR1, WS2015/16
  *
@@ -66,6 +66,9 @@ public class Diff {
 			}
 
 		} while(b1 || b2);
+
+		scanFile1.close();
+		scanFile2.close();
 
 		if(equal) {
 			System.out.println("Keine Unterschiede gefunden");

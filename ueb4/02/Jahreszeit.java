@@ -1,11 +1,5 @@
-import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Map;
-import java.util.Scanner;
-
-
 /**
- *	30.11.2015 15:45:08
+ *	Mo 30. Nov 16:28:27 CET 2015
  *
  *	PR1, WS2015/16
  *
@@ -18,6 +12,10 @@ import java.util.Scanner;
  * 	julian.opitz@stud.hs-hannover.de
  *
  */
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Map;
+import java.util.Scanner;
 public class Jahreszeit {
 
 	private static final String PROMPT_DAY = "Tag eingeben (1-31): ";
