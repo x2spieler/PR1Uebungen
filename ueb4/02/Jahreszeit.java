@@ -1,3 +1,5 @@
+package ueb4;
+
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
@@ -60,7 +62,7 @@ public class Jahreszeit {
 	private static int getSeasonNumber(final int day, final int month) {
 		int i;
 		for (i = 0; i < SEASON_START_DAY.length; i++) {
-			if (month <= ((i + 1) * 3) && day < SEASON_START_DAY[i]) {
+			if (month <= ((i + 1) * 3) - 1 || (month <= ((i + 1) * 3) && day < SEASON_START_DAY[i])) {
 				return wrap0To3(i);
 			}
 		}
