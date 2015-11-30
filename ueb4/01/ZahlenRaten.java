@@ -1,5 +1,5 @@
 /**
- *	Mo 30. Nov 11:55:28 CET 2015
+ *	Mo 30. Nov 11:58:32 CET 2015
  *
  *	PR1, WS2015/16
  *
@@ -14,7 +14,7 @@
  *	-----------------------------------------
  *	Programmbeschreibung
  */
-public class NewJava {
+public class ZahlenRaten {
 	public static void main(String[] args) {
 
 
