@@ -1,5 +1,5 @@
 /**
- *	Mo 30. Nov 13:43:35 CET 2015
+ *	Mo 30. Nov 14:39:21 CET 2015
  *
  *	PR1, WS2015/16
  *
@@ -19,10 +19,10 @@ import java.util.*;
 
 public class DoubleSpace {
 	public static void main(String[] args) throws IOException {
+
 		doubleSpace("1.txt","2.txt");
-
-
 	}
+
 	public static void doubleSpace(String file1, String file2) throws IOException {
 
 		File fRead = new File(file1);
@@ -34,7 +34,6 @@ public class DoubleSpace {
 		if(scanFRead.hasNextLine()) {
 			fWrite.println(scanFRead.nextLine());
 			while (scanFRead.hasNextLine()) {
-				fWrite.println();
 				fWrite.println();
 				fWrite.println(scanFRead.nextLine());
 			}
