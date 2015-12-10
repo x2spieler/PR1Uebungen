@@ -1,13 +1,28 @@
+/**
+ *	10.12.2015 15:12:24
+ *
+ *	PR1, WS2015/16
+ *
+ *	Leonard Oertelt
+ *	Matrikelnummer 1276156
+ *	leonard.oertelt@stud.hs-hannover.de
+ * 
+ *	Julian Opitz
+ * 	Matrikelnummer 1302082
+ * 	julian.opitz@stud.hs-hannover.de
+ *
+ */
 public class Max {
 	private static final String ERR_NUM_OF_ARGS = "Bitte genau 3 Parameter angeben";
 	private static final String ERR_ARG_TYPE = "Ungültige Parameter.";
 	private static final String OUTPUT = "Maximum: ";
 
 	public static void main(String[] args) {
-		checkArgs(args);
-		int[] input = asInt(args);
-		int max = getMax(input);
-		System.out.println(OUTPUT + max);
+		if (checkArgs(args)) {
+			int[] input = asInt(args);
+			int max = getMax(input);
+			System.out.println(OUTPUT + max);
+		}
 	}
 
 	private static int[] asInt(String[] numbers) {
@@ -26,19 +41,20 @@ public class Max {
 		return ret;
 	}
 
-	private static void checkArgs(String[] args) {
+	private static boolean checkArgs(String[] args) {
 		if (args.length != 3) {
 			System.out.println(ERR_NUM_OF_ARGS);
-			System.exit(0);
+			return false;
 		}
 		for (int i = 0; i < args.length; i++) {
 			try {
 				Integer.valueOf(args[i]);
 			} catch (NumberFormatException e) {
 				System.out.println(ERR_ARG_TYPE);
-				System.exit(0);
+				return false;
 			}
 		}
+		return true;
 	}
 
 }

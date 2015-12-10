@@ -1,5 +1,19 @@
 import java.util.Scanner;
 
+/**
+ *	10.12.2015 15:11:35
+ *
+ *	PR1, WS2015/16
+ *
+ *	Leonard Oertelt
+ *	Matrikelnummer 1276156
+ *	leonard.oertelt@stud.hs-hannover.de
+ * 
+ *	Julian Opitz
+ * 	Matrikelnummer 1302082
+ * 	julian.opitz@stud.hs-hannover.de
+ *
+ */
 public class Pascal {
 	private static final String PROMPT = "Wieviele Zeilen? ";
 

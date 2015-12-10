@@ -1,12 +1,26 @@
+/**
+ *	10.12.2015 15:13:23
+ *
+ *	PR1, WS2015/16
+ *
+ *	Leonard Oertelt
+ *	Matrikelnummer 1276156
+ *	leonard.oertelt@stud.hs-hannover.de
+ * 
+ *	Julian Opitz
+ * 	Matrikelnummer 1302082
+ * 	julian.opitz@stud.hs-hannover.de
+ *
+ */
 public class VergleichArrays {
 
-	public boolean kleinerGleich(int[] a, int[] b) {
+	static public boolean kleinerGleich(int[] a, int[] b) {
 
 		return isEmpty(a) || firstShorterOrEqualLengthAndEveryElementSmallerOrEquals(a, b)
 				|| firstLongerButEveryIndexSmallerOrEqualsAndOneSmaller(a, b);
 	}
 
-	private boolean firstLongerButEveryIndexSmallerOrEqualsAndOneSmaller(int[] a, int[] b) {
+	static private boolean firstLongerButEveryIndexSmallerOrEqualsAndOneSmaller(int[] a, int[] b) {
 		if (a.length <= b.length || b.length < 1)
 			return false;
 		boolean ret = false;
@@ -19,7 +33,7 @@ public class VergleichArrays {
 		return ret;
 	}
 
-	private boolean firstShorterOrEqualLengthAndEveryElementSmallerOrEquals(int[] a, int[] b) {
+	static private boolean firstShorterOrEqualLengthAndEveryElementSmallerOrEquals(int[] a, int[] b) {
 		if (a.length > b.length)
 			return false;
 		for (int i = 0; i < a.length; i++) {
@@ -29,7 +43,7 @@ public class VergleichArrays {
 		return true;
 	}
 
-	private boolean isEmpty(int[] a) {
+	static private boolean isEmpty(int[] a) {
 		return a.length == 0;
 	}
 }
